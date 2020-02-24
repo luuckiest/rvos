@@ -12,11 +12,11 @@ git clone https://github.com/imatge-upc/rvos.git
 ```
 
 - Install requirements ```pip install -r requirements.txt``` 
-- Install [PyTorch 1.0](http://pytorch.org/) (choose the whl file according to your setup, e.g. your CUDA version):
+- Install [PyTorch 1.1](http://pytorch.org/) (choose the whl file according to your setup, e.g. your CUDA version):
 
 ```shell
 pip3 install https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
-pip3 install torchvision
+pip3 install torchvision==0.3.0
 ```
 
 ## Data
@@ -48,7 +48,7 @@ depending on the dataset you are using.
 
 ## Training
 
-- Train the model for one-shot video object segmentation with ```python train_previous_mask.py -model_name model_name```. Checkpoints and logs will be saved under ```../models/model_name```.
+- Train the model for one-shot video object segmentation with ```python train_previous_mask.py -model_name model_name -dataset=youtube```. Checkpoints and logs will be saved under ```../models/model_name```.
 - Train the model for zero-shot video object segmentation with ```python train.py -model_name model_name```. Checkpoints and logs will be saved under ```../models/model_name```. 
 - Other arguments can be passed as well. For convenience, scripts to train with typical parameters are provided under ```scripts/```.
 - Plot loss curves at any time with ```python plot_curves.py -model_name model_name```.
